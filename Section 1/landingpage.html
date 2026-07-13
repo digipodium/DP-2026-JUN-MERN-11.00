@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="">
+
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full"
+                    viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">Tailblocks</span>
+            </a>
+            <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900">First Link</a>
+                <a class="mr-5 hover:text-gray-900">Second Link</a>
+                <a class="mr-5 hover:text-gray-900">Third Link</a>
+                <a class="mr-5 hover:text-gray-900">Fourth Link</a>
+            </nav>
+            <button
+                class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+
+        <article>
+
+            <section>
+
+                <div class="container mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-6 my-auto text-center md:text-left">
+                            <h1 class="text-3xl md:text-5xl font-semibold">Hero Section Title Here</h1>
+                            <p class="text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus
+                                vel beatae
+                                perferendis, eligendi optio temporibus error officia nisi alias impedit!</p>
+
+                            <div class="flex gap-4 justify-center md:justify-start">
+                                <button class="hover:scale-110 duration-300 bg-linear-to-br from-pink-400
+                                 to-violet-400 py-2 px-3 text-white rounded-lg">
+                                    Primary
+                                </button>
+                                <button class="hover:scale-110 duration-300 py-2 px-3 border rounded-lg">
+                                    Secondary
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="order-first md:order-last">
+                            <img src="hero.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </article>
+
+        <article>
+            <section class="bg-linear-to-br from-violet-200 to-pink-200 rounded-br-[50px] rounded-tl-[50px]">
+
+                <div class="container mx-auto py-10">
+
+                    <h2 class="text-center text-4xl font-bold">Our Services</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                        <div class="bg-white shadow-lg rounded-xl p-6 text-center space-y-6">
+
+                            <i class="fa-solid fa-lightbulb fa-5x"></i>
+
+                            <h3 class="text-2xl font-bold">Card Title 1</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo at animi quo optio
+                                ipsam libero totam iure earum nulla accusamus.</p>
+
+                            <button class="bg-violet-500 text-white p-3 rounded-lg w-full">
+                                Explore
+                            </button>
+                        </div>
+                        <div class="bg-white shadow-lg rounded-xl p-6 text-center space-y-6">
+
+                            <i class="fa-solid fa-lightbulb fa-5x"></i>
+
+                            <h3 class="text-2xl font-bold">Card Title 1</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo at animi quo optio
+                                ipsam libero totam iure earum nulla accusamus.</p>
+
+                            <button class="bg-violet-500 text-white p-3 rounded-lg w-full">
+                                Explore
+                            </button>
+                        </div>
+                        <div class="bg-white shadow-lg rounded-xl p-6 text-center space-y-6">
+
+                            <i class="fa-solid fa-lightbulb fa-5x"></i>
+
+                            <h3 class="text-2xl font-bold">Card Title 1</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo at animi quo optio
+                                ipsam libero totam iure earum nulla accusamus.</p>
+
+                            <button class="bg-violet-500 text-white p-3 rounded-lg w-full">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section>
+
+                <div class="container mx-auto py-10">
+
+                    <div class="flex gap-2 w-1/2 mx-auto">
+
+                        <input type="text" class="border p-3 rounded-md w-full">
+                        <button class="bg-blue-500 text-white px-3 py-3 rounded-md">
+                            Search
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section>
+
+                <div class="container mx-auto py-10">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div class="col-span-4">
+                            <img src="feature.svg" alt="">
+                        </div>
+                        <div class="col-span-8">
+
+                            <h2 class="text-4xl font-semibold">Our Features</h2>
+
+                            <ul class="list-disc list-inside mt-6 space-y-3">
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, dignissimos?</li>
+                                <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto harum possimus
+                                    distinctio obcaecati voluptatum similique, provident quisquam maiores! Est, quaerat?
+                                </li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem laboriosam
+                                    aspernatur repudiandae deleniti alias dicta.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </article>
+
+    </main>
+
+    <footer class="bg-linear-to-br from-pink-400 to-violet-400 py-10 text-white">
+        <div class="px-4 md:px-0 container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                <div class="col-span-4 space-y-3">
+                    <h4 class="text-2xl">Brand Name</h4>
+                    <p class="font-semibold"> &copy; 2026, All Rigts Reserved </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni expedita, in, ab, quidem debitis
+                        quasi nobis quo voluptatibus saepe quas animi eligendi enim repudiandae facilis praesentium
+                        sapiente nam. Nihil, perspiciatis!</p>
+                </div>
+
+                <div class="col-span-2">
+                    <h4 class="text-2xl">Important Links</h4>
+                    <div class="mt-6 space-y-3">
+                        <a href="#" class="block">Home</a>
+                        <a href="#" class="block">Contact</a>
+                        <a href="#" class="block">About</a>
+                        <a href="#" class="block">Services</a>
+                        <a href="#" class="block">FAQ</a>
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <h4 class="text-2xl">Important Links</h4>
+                    <div class="mt-6 space-y-3">
+                        <a href="#" class="block">Home</a>
+                        <a href="#" class="block">Contact</a>
+                        <a href="#" class="block">About</a>
+                        <a href="#" class="block">Services</a>
+                        <a href="#" class="block">FAQ</a>
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <h4 class="text-2xl">Important Links</h4>
+                    <div class="mt-6 space-y-3">
+                        <a href="#" class="block">Home</a>
+                        <a href="#" class="block">Contact</a>
+                        <a href="#" class="block">About</a>
+                        <a href="#" class="block">Services</a>
+                        <a href="#" class="block">FAQ</a>
+                    </div>
+                </div>
+
+                <div class="col-span-2">
+                    <h4 class="text-2xl">Important Links</h4>
+                    <div class="mt-6 space-y-3">
+                        <a href="#" class="block">Home</a>
+                        <a href="#" class="block">Contact</a>
+                        <a href="#" class="block">About</a>
+                        <a href="#" class="block">Services</a>
+                        <a href="#" class="block">FAQ</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
