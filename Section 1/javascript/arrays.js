@@ -33,9 +33,8 @@ movies.shift();
 
 console.log(movies);
 
-// movies.splice(2, 1); // removing elements from any index
+// movies.splice(2, 2); // removing elements from any index
 // movies.splice(1, 2, 'tare zameen par', '3 idiots'); // replacement
 movies.splice(3, 0, 'tare zameen par', '3 idiots');  // insertion
 
 console.log(movies);
-
