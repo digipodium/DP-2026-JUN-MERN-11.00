@@ -1,11 +1,13 @@
 const express = require('express');
 const UserRouter = require('./routers/UserRouter');
+require('./connection');
 
 const app = express();
 
 const port = 5000;
 
 // middleware
+app.use(express.json());
 app.use('/user', UserRouter);
 
 // endpoint or route
