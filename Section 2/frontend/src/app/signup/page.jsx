@@ -1,7 +1,12 @@
 'use client';
+import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react';
+import toast from 'react-hot-toast';
 import * as Yup from 'yup';
+import { DotSpinner } from 'ldrs/react'
+import 'ldrs/react/DotSpinner.css'
+
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -28,8 +33,19 @@ const Signup = () => {
             password: "",
             confirmPassword: ""
         },
-        onSubmit: (values) => {
+        onSubmit: (values, { resetForm, setSubmitting }) => {
             console.log(values);
+
+            axios.post('http://localhost:5000/user/add', values)
+                .then((result) => {
+                    // console.log('user registered successfully');
+                    resetForm();
+                    toast.success('User registered successfully');
+                }).catch((err) => {
+                    console.log(err);
+                    toast.error('Something went wrong');
+                    setSubmitting(false);
+                });
         },
         validationSchema: SignupSchema
     })
@@ -135,7 +151,8 @@ const Signup = () => {
                                     </div>
                                 </div>
                                 {
-                                    (signupForm.errors.password && signupForm.touched.password) && (
+                                    (
+                                        signupForm.errors.password && signupForm.touched.password) && (
                                         <p className="text-xs text-red-600 mt-2" id="email-error">
                                             {signupForm.errors.password}
                                         </p>
@@ -182,7 +199,16 @@ const Signup = () => {
                             </div>
                             {/* End Checkbox */}
 
-                            <button type="submit" className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">Sign up</button>
+                            <button disabled={signupForm.isSubmitting} type="submit" className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-blue-600 border border-transparent text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                                {signupForm.isSubmitting ? (
+                                    <DotSpinner
+                                        size="30"
+                                        speed="0.9"
+                                        color="white"
+                                    />
+                                ) : ('Sign Up')
+                                }
+                            </button>
                         </div>
                     </form>
                     {/* End Form */}
