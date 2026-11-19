@@ -1,5 +1,8 @@
 const express = require('express');
 const Model = require('../models/UserModel');
+const jwt = require('jsonwebtoken');
+const auth = require('../middlewares/auth');
+require('dotenv').config();
 
 const router = express.Router();
 
@@ -14,7 +17,7 @@ router.post('/add', (req, res) => {
         });
 });
 
-router.get('/getall', (req, res) => {
+router.get('/getall', auth, (req, res) => {
     Model.find()
         .then((result) => {
             res.status(200).json(result);
@@ -70,6 +73,43 @@ router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
         .then((result) => {
             res.status(200).json(result);
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.post('/authenticate', (req, res) => {
+    const { email, password } = req.body;
+
+    Model.findOne({ email, password })
+        .then((result) => {
+
+            if (result) {
+                // details match
+                // create token
+
+                const { _id, name } = result;
+
+                jwt.sign(
+                    { _id, name },
+                    process.env.JWT_SECRET,
+                    { expiresIn: '1h' },
+                    (err, token) => {
+                        if (err) {
+                            console.log(err);
+                            res.status(500).json(err);
+                        } else {
+                            res.status(200).json({ token });
+                        }
+                    }
+                )
+
+            } else {
+                // details do not match
+                res.status(403).json({ message: 'Invalid Credentials' });
+            }
+
         }).catch((err) => {
             console.log(err);
             res.status(500).json(err);

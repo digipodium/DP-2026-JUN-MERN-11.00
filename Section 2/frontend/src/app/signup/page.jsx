@@ -1,11 +1,11 @@
 'use client';
-import axios from 'axios';
 import { useFormik } from 'formik';
 import React from 'react';
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
 import { DotSpinner } from 'ldrs/react'
 import 'ldrs/react/DotSpinner.css'
+import axios from 'axios';
 
 
 const SignupSchema = Yup.object().shape({
@@ -38,14 +38,14 @@ const Signup = () => {
 
             axios.post('http://localhost:5000/user/add', values)
                 .then((result) => {
-                    // console.log('user registered successfully');
+                    toast.success('Signup Successfull');
                     resetForm();
-                    toast.success('User registered successfully');
                 }).catch((err) => {
                     console.log(err);
-                    toast.error('Something went wrong');
                     setSubmitting(false);
+                    toast.error('Some Error Occured');
                 });
+
         },
         validationSchema: SignupSchema
     })
